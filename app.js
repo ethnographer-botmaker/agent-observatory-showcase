@@ -14,10 +14,10 @@ function load(trace,label){data=validateTrace(trace);setting=settingOf(data);sel
   $('case-subtitle').textContent=String(data.run_id || 'Unnamed trace')+(captured?' · captured '+captured:'');
   const notes=setting==='github'?[...GITHUB_LIMITS,...(Array.isArray(data.metadata?.collection_warnings)?data.metadata.collection_warnings:[])]:['Directed ties require matching sent/read records. Recorded exposure does not establish understanding or causal influence.','This browser validates structure; it does not verify the original audit manifest or hash chain.'];
   if (typeof data.metadata?.note==='string') notes.unshift(data.metadata.note);
-  $('boundary').textContent='OBSERVATION BOUNDARY  ·  '+notes.join(' ');
+  $('boundary').textContent='OBSERVATIONAL BOUNDARIES  ·  '+notes.join(' ');
   $('actor').replaceChildren(new Option('All actors',''));for(const actor of [...new Set(data.events.map(e=>e.actor_id))].sort())$('actor').add(new Option(actor,actor));
   $('search').value='';$('cutoff').max=data.events.length;$('cutoff').value=data.events.length;$('export').disabled=false;render();
-  status(`Loaded ${data.events.length} events. Select a lens, narrow the window, and inspect the evidence.`);
+  status(`Loaded ${data.events.length} events. Select an analytical lens, filter by actor, and inspect the empirical records.`);
 }
 function visible(){return data?selectEvents(data,state):[];}
 function inspect(id){selected=id;renderList();renderDetail();}
