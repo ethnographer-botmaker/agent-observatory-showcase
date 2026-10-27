@@ -63,7 +63,7 @@ function renderDetail(){const e=data.events.find(e=>e.event_id===selected) || vi
   if(linked.size){const group=el('div',undefined,'tie');group.append(el('span','Linked evidence:'));for(const id of linked)if(data.events.some(e=>e.event_id===id))group.append(eventButton(id));root.append(group);}
   const details=el('details');details.append(el('summary','Complete source event (JSON)'),el('pre',JSON.stringify(e,null,2)));root.append(details);
 }
-async function bundled(name){status('Loading recorded case…');const path=name==='clearance'?'data/clearance.json':'data/wled.json';const r=await fetch(path);if(!r.ok)throw new Error('Bundled case could not be loaded. Serve the site over HTTP or open the original standalone demo.');load(await r.json(),name==='clearance'?'Four agents. One clearance plan.':'WLED · Negotiating contribution rules');}
+async function bundled(name){status('Loading recorded case…');const path=name==='clearance'?'data/clearance.json':'data/wled.json';const r=await fetch(path);if(!r.ok)throw new Error('Bundled case could not be loaded. Serve the site over HTTP or open the original standalone demo.');load(await r.json(),name==='clearance'?'Four-agent bureaucratic clearance experiment':'WLED · Negotiating contribution rules');}
 $('case-clearance').addEventListener('click',()=>task(()=>bundled('clearance')));
 $('case-wled').addEventListener('click',()=>task(()=>bundled('wled')));
 $('upload').addEventListener('change',()=>task(async()=>{const file=$('upload').files[0];if(!file)return;try{if(file.size>MAX_BYTES)throw new Error('Choose a trace smaller than 10 MB.');load(parseTrace(await file.text(),file.name),file.name);}finally{$('upload').value='';}}));
