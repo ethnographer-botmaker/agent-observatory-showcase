@@ -1,0 +1,9 @@
+{
+  "run_id": "illustrative_format_example",
+  "metadata": {"setting": "synthetic_format_example", "note": "Fabricated solely to demonstrate the upload schema. Not research evidence."},
+  "events": [
+    {"event_id": "X1", "sequence_id": 1, "actor_id": "agent-a", "event_type": "MESSAGE_SENT", "message_id": "m1", "recipient_id": "agent-b", "output": "Please review the draft."},
+    {"event_id": "X2", "sequence_id": 2, "actor_id": "agent-b", "event_type": "MESSAGE_READ", "message_id": "m1", "sender_id": "agent-a", "parent_event_ids": ["X1"], "output": "Please review the draft."},
+    {"event_id": "X3", "sequence_id": 3, "actor_id": "agent-b", "event_type": "FILE_CREATED", "artifact_id": "draft", "artifact_version": 1, "output": "A sample document."}
+  ]
+}
