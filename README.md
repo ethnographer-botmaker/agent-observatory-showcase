@@ -1,9 +1,9 @@
-# Agent Observatory showcase
+# Traceology reviewer gateway
 
-Public static distribution of the Agent Observatory interface. Explore two retained research cases, upload a local JSON/JSONL trace, or import a bounded public GitHub pull-request snapshot.
+Two separate, sequential research demonstrations: a controlled four-agent clearance experiment followed by WLED pull request #5860. Each has an introduction, independently controlled replay, guided moments, all-record stepping, source inspection, and artifact history at the selected position. Methodological reflection follows both demonstrations.
 
-Published assets originate from research implementation commit fe933a80a05e84b1d55cd781cb3f6213c81f271d. This repository contains only the showcase files, not the private research repository or its history. Source dataset exports and the original dual-case HTML are retained unchanged. The format example is explicitly synthetic.
+The reviewer interface has no file upload, public repository importer, or sample-data download. Code, retained datasets, and the original dual-case analysis remain in this repository. The original synthetic format example and importer utilities remain source assets, outside the reviewer interface.
 
-Uploads stay in the browser. GitHub collection uses read-only public requests and records collection limits. No API keys, telemetry, or AI inference service are included. GitHub snapshots do not establish comment reading, autonomous agency, or causal influence.
+GitHub records are retrospective snapshots. Comment edits, commit author dates, partial patches, and unobserved private interactions constrain interpretation. Playback follows retained sequence order; it does not infer causality or reading.
 
-To preview: `python -m http.server 8000` from this folder. GitHub Pages publishes `main` at the repository root. `build-manifest.json` lists SHA-256 hashes of the static assets.
+Preview with `python -m http.server 8000` from this directory. GitHub Pages publishes `main` at the repository root. `build-manifest.json` records SHA-256 hashes of distribution assets. No external services or AI inference are called by the gateway.
